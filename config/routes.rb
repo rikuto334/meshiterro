@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+get "/post_images" => 'post_images#index'
   resource :post_images, only:[:new, :create, :index, :show]
   devise_for :users
   get "/homes/about" => "homes/about", as: "about"
