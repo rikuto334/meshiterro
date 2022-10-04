@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
 get "/post_images" => 'post_images#index'
-get '/post_images/:id' => 'post_images#show'
+get '/post_images/:id' => 'post_images#show', as: 'show'
+delete '/post_images/:id' => 'post_images#destroy', as: 'delete'
   resource :post_images, only:[:new, :create, :index, :show]
   devise_for :users
   get "/homes/about" => "homes/about", as: "about"
